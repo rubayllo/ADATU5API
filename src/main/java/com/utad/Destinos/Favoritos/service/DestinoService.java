@@ -21,13 +21,6 @@ public class DestinoService {
         return destinoRepository.findAll();
     }
 
-    public List<Destino> getDestinosByCity(String city){
-        return destinoRepository.findByCityContainingIgnoreCase(city);
-    }
-
-    public List<Destino> getDestinosByCountry(String country) {
-        return destinoRepository.findByCountryContainingIgnoreCase(country);
-    }
 
     public Destino getDestinoById(Long id){
         return destinoRepository.findById(id).orElse(null);
@@ -41,6 +34,12 @@ public class DestinoService {
         destinoRepository.deleteById(id);
     }
 
+    public List<Destino> getDestinosByCity(String city){
+        return destinoRepository.findByCityContainingIgnoreCase(city);
+    }
 
+    public List<Destino> getDestinosByCountry(String country) {
+        return destinoRepository.findByCountryContainingIgnoreCase(country);
+    }
 
 }
